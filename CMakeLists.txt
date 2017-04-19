@@ -12,6 +12,14 @@ set(CMAKE_FIND_ROOT_PATH "${TERRAFORM_ROOT}")
 
 set(TERRAFORM_TARGETS "" CACHE STRING "semi-colon separated values of targets to build")
 
+if (NOT TERRAFORM_TARGETS)
+  file(GLOB TERRAFORM_RECIPES_FILES recipes/*.cmake)
+  foreach(RECIPE_FILE ${TERRAFORM_RECIPES_FILES})
+    get_filename_component(TARGET ${RECIPE_FILE} NAME_WE)
+    list(APPEND TERRAFORM_TARGETS ${TARGET})
+  endforeach()
+endif()
+
 foreach (TARGET ${TERRAFORM_TARGETS})
   if (EXISTS "${CMAKE_SOURCE_DIR}/recipes/${TARGET}.cmake")
     include(recipes/${TARGET}.cmake)
@@ -19,13 +27,6 @@ foreach (TARGET ${TERRAFORM_TARGETS})
     message(FATAL_ERROR "${TARGET} building was asked, but its recipe was not found (${CMAKE_SOURCE_DIR}/recipes/${TARGET}.cmake)")
   endif ()
 endforeach ()
-
-if (NOT TERRAFORM_TARGETS)
-  message("The variable TERRAFORM_TARGETS must be set:")
-  message("cmake -DTERRAFORM_TARGETS='foo;bar' ../")
-  message("")
-  message(FATAL_ERROR "Terraform targets not set")
-endif()
 
 
 # Command to create a new game

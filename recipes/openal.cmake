@@ -9,7 +9,6 @@ message(STATUS "openal will be built.")
 if (WIN32)
   ExternalProject_Add(
     openal
-    DEPENDS sdl2
     PREFIX ${CMAKE_BINARY_DIR}
     INSTALL_DIR ${TERRAFORM_ROOT}
     DOWNLOAD_DIR ${DOWNLOAD_DIR}
@@ -23,7 +22,6 @@ if (WIN32)
 else ()
   ExternalProject_Add(
     openal
-    DEPENDS sdl2
     PREFIX ${CMAKE_BINARY_DIR}
     INSTALL_DIR ${TERRAFORM_ROOT}
     URL http://kcat.strangesoft.net/openal-releases/openal-soft-1.16.0.tar.bz2
