@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 # DEPENDENCIES_ROOT is a variable pointing to where terraform
 # installed all dependencies. You can override it by
 # passing -DDEPENDENCIES_ROOT=/other/path in cmake command line
-set(DEPENDENCIES_ROOT "${CMAKE_SOURCE_DIR}/../.." CACHE PATH "Additional where your dependencies can be located")
+set(DEPENDENCIES_ROOT "@TERRAFORM_RELATIVE_ROOT@" CACHE PATH "Additional where your dependencies can be located")
 
 # Asks CMake to try to find libraries in ${DEPENDENCIES_ROOT} too
 list(APPEND CMAKE_PREFIX_PATH "${DEPENDENCIES_ROOT}")

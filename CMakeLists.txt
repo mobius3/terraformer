@@ -36,7 +36,7 @@ add_custom_target(new-project
   -DTERRAFORM_DIR=${CMAKE_SOURCE_DIR}
   -DTERRAFORM_ROOT=${TERRAFORM_ROOT}
   -DPROJECT_NAME="\${PROJECT_NAME}"
-  -P ${CMAKE_SOURCE_DIR}/cmake-scripts/new-project.cmake
+  -P ${CMAKE_SOURCE_DIR}/scripts/new-project.cmake
   DEPENDS ${TERRAFORM_TARGETS}
 )
 

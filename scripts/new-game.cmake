@@ -11,6 +11,7 @@ endif()
 # Produces name that can be a folder
 string(MAKE_C_IDENTIFIER ${PROJECT_NAME} GAME_TARGET)
 set(PROJECT_ROOT ${TERRAFORM_ROOT}/game/${GAME_TARGET})
+file(RELATIVE_PATH TERRAFORM_RELATIVE_ROOT ${PROJECT_ROOT} ${TERRAFORM_ROOT})
 
 # Copy skeleton to target
 execute_process(COMMAND ${CMAKE_COMMAND} -E copy_directory ${SKEL_DIR} ${PROJECT_ROOT}/)
