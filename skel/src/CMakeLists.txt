@@ -1,6 +1,3 @@
-# This CMakeLists.txt is responsible for listing your project sources and
-# linking the resulting executable to FusionEngine
-
 # Must be the same as parent's CMakeLists.txt
 project(@PROJECT_TARGET@)
 

@@ -29,14 +29,14 @@ foreach (TARGET ${TERRAFORM_TARGETS})
 endforeach ()
 
 
-# Command to create a new game
+# Command to create a new project
 add_custom_target(new-project
   COMMAND ${CMAKE_COMMAND}
   -DSKEL_DIR=${CMAKE_SOURCE_DIR}/skel
   -DTERRAFORM_DIR=${CMAKE_SOURCE_DIR}
   -DTERRAFORM_ROOT=${TERRAFORM_ROOT}
   -DPROJECT_NAME="\${PROJECT_NAME}"
-  -P ${CMAKE_SOURCE_DIR}/cmake-scripts/new-game.cmake
+  -P ${CMAKE_SOURCE_DIR}/cmake-scripts/new-project.cmake
   DEPENDS ${TERRAFORM_TARGETS}
 )
 
@@ -50,7 +50,7 @@ message(STATUS "Library header files:           ${TERRAFORM_ROOT}/include/")
 
 message("")
 message("Build targets:")
-message("    new-game: Build the target 'new-project' to create projects using this root")
+message("    new-ptoject: Build the target 'new-project' to create projects using this root")
 message("              - make new-project PROJECT_NAME=\"New Project\"")
 message("")
 message("    all: Build the target 'all' to generate only the terraform root")

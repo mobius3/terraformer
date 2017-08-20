@@ -9,7 +9,7 @@ set(DEPENDENCIES_ROOT "${CMAKE_SOURCE_DIR}/../.." CACHE PATH "Additional where y
 # Asks CMake to try to find libraries in ${DEPENDENCIES_ROOT} too
 list(APPEND CMAKE_PREFIX_PATH "${DEPENDENCIES_ROOT}")
 
-# @PROJECT_TARGET@ is the executable name for "@GAME_NAME@" 
+# @PROJECT_TARGET@ is the executable name for "@PROJECT_NAME@"
 project(@PROJECT_TARGET@)
 
 # FindPackage utilities. This is the place where you might put custom
@@ -17,7 +17,7 @@ project(@PROJECT_TARGET@)
 # packages. Consult CMake documentation on how to write those.
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake-modules")
 
-# Where the code for your game is going to be placed.
+# Where the code for your project is going to be placed.
 # Consult CMakeLists.txt inside of src/ to learn how to add new
 # files to your project.
 add_subdirectory(src)
