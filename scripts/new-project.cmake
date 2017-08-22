@@ -9,8 +9,8 @@ if (${PROJECT_NAME_LOWERCASE} STREQUAL "test")
 endif()
 
 # Produces name that can be a folder
-string(MAKE_C_IDENTIFIER ${PROJECT_NAME} GAME_TARGET)
-set(PROJECT_ROOT ${TERRAFORM_ROOT}/game/${GAME_TARGET} CACHE PATH "Where the project will be generated")
+string(MAKE_C_IDENTIFIER ${PROJECT_NAME} PROJECT_TARGET)
+set(PROJECT_ROOT ${TERRAFORM_ROOT}/projects/${PROJECT_TARGET} CACHE PATH "Where the project will be generated")
 file(RELATIVE_PATH TERRAFORM_RELATIVE_ROOT ${PROJECT_ROOT} ${TERRAFORM_ROOT})
 
 # Copy skeleton to target
@@ -25,7 +25,7 @@ message(TERRAFORM "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 message("")
 message("Summary:")
 message(STATUS "Project name:                ${PROJECT_NAME}")
-message(STATUS "Project target:              ${GAME_TARGET}")
+message(STATUS "Project target:              ${PROJECT_TARGET}")
 message(STATUS "Project folder:              ${PROJECT_ROOT}")
 message("")
 message(TERRAFORM "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --")
