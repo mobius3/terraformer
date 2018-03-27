@@ -14,7 +14,7 @@ if (WIN32)
     PREFIX ${CMAKE_BINARY_DIR}
     INSTALL_DIR ${TERRAFORM_ROOT}
     DOWNLOAD_DIR ${DOWNLOAD_DIR}
-    URL http://libsdl.org/release/SDL2-devel-2.0.3-mingw.tar.gz
+    URL http://libsdl.org/release/SDL2-devel-2.0.8-VC.zip
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND
@@ -28,7 +28,7 @@ else () # Now, if using anything else, get the sources.
     PREFIX ${CMAKE_BINARY_DIR}
     INSTALL_DIR ${TERRAFORM_ROOT}
     DOWNLOAD_DIR ${DOWNLOAD_DIR}
-    URL http://libsdl.org/release/SDL2-2.0.3.tar.gz
+    URL http://libsdl.org/release/SDL2-2.0.8.tar.gz
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${TERRAFORM_ROOT}
   )
 endif ()
